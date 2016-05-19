@@ -1,0 +1,24 @@
+  routeString <- solutions[solutionIndex]
+  
+  routes2 = read_route_from_text(unlist(routeString))
+  
+  read_coordinates_from_text(routes2[[1]])
+  route3 = read.csv(textConnection(as.character(routes2[[1]])), stringsAsFactors = FALSE, sep = '/', header = FALSE, col.names = c('Visit', 'Arrival'))
+  
+  route4 = data.frame(X=visits$LocationX[route3$Visit], Y=visits$LocationY[route3$Visit])
+  
+  str(routes2)
+  mapply(function(route) read_coordinates_from_text(route), read_route_from_text(unlist(routeString)))
+  mapply(function(route) read_coordinates_from_text(route), read_route_from_text(unlist(routeString)))
+  mapply(function(route) unlist(route), read_route_from_text(unlist(routeString)))
+  lapply(read_route_from_text(unlist(routeString)), function(route) read_coordinates_from_text(route))
+  lapply(read_route_from_text(unlist(routeString)), print)
+  
+  str(routes)
+  routes[[1]]
+  test <- mapply(function(route) data.frame(x=route$X, y=route$Y), routes)
+  
+  testdf <- data.frame(t(routes))
+  route[,]
+
+  #routes <- apply(read_route_from_text(t(solutions[solutionIndex, ]))[, ], 1, function(route) read_coordinates_from_text(route))
